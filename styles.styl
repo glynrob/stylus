@@ -1,0 +1,67 @@
+/* SCSS STYLES */
+
+// Variables
+red = #BF3130
+green = #689B00
+blue = #1440AB
+
+// Mixins
+cross-border-radius(args) 
+	-webkit-border-radius args
+	-moz-border-radius args
+	border-radius args
+
+cross-box-shadow(args)
+	-webkit-box-shadow args
+	-moz-box-shadow args
+	box-shadow args
+
+transition(prop= all, time= 1s, ease= linear)
+	-webkit-transition  prop time ease
+	-moz-transition  prop time ease
+	-o-transition  prop time ease
+	-ms-transition  prop time ease
+	transition  prop time ease
+
+btn-gradient(origin= left, alphavar= 0.2)
+	background-image -webkit-linear-gradient(origin, rgba(0,0,0,0.0), rgba(0,0,0,alphavar))
+	background-image -moz-linear-gradient(origin, rgba(0,0,0,0.0), rgba(0,0,0,alphavar))
+	background-image -o-linear-gradient(origin, rgba(0,0,0,0.0), rgba(0,0,0,alphavar))
+	background-image -ms-linear-gradient(origin, rgba(0,0,0,0.0), rgba(0,0,0,alphavar))
+	background-image linear-gradient(origin, rgba(0,0,0,0.0), rgba(0,0,0,alphavar))
+
+
+// IMPLEMENTATION
+body
+	background-color desaturate(blue, 80%) // function desaturate
+	font-family Arial, Helvetica, sans-serif
+
+.container
+	text-align center
+	padding 4em
+
+.red
+	background-color red
+
+.green
+	background-color green
+
+.blue
+	background-color blue
+
+.btn
+	cross-border-radius 10px
+	btn-gradient top 0.3
+	cross-box-shadow 5px 5px 6px rgba(0, 0, 0, 0.3)
+	transition all 0.2s ease-in
+	padding 10px
+	margin 10px
+	font-size 30px
+	color #FFFFFF
+	text-decoration none
+	border #000000 solid 3px 
+	
+	// Nested Rule
+	&:hover
+		border-color #CCCCCC
+		btn-gradient bottom 0.3
